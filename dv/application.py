@@ -6,7 +6,9 @@ from flask_jsglue import JSGlue
 # configure application
 app = Flask(__name__)
 JSGlue(app)
-
+@app.route('/')
+def home():
+    return 'Home page'
 @app.route("/<string:filename>")
 def main(filename):
     """Render file."""
